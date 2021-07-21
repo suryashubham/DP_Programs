@@ -1,4 +1,4 @@
-def get_shortest_path(matrix,row,col):
+def get_shortest_path(matrix,row:int,col:int)-> int:
     dp = [[0]*row for _ in range(col)]
 
     #fill first row
@@ -16,9 +16,6 @@ def get_shortest_path(matrix,row,col):
         for p in range(1,row):
             dp[k][p] = matrix[k][p] + min(dp[k-1][p],dp[k][p-1])
     return dp[row-1][col-1]
-
-
-
 
 
 mat = [
